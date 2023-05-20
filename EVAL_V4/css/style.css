@@ -1,0 +1,875 @@
+body {
+  background-color: #31525b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+th {
+  font-weight: normal;
+}
+
+.img__logo {
+  width: 20%;
+}
+
+.img__fond {
+  width: 25%;
+}
+.img__tournament {
+  width: 50%;
+}
+.img__detailsTour {
+  width: 70%;
+}
+.img__profil {
+  width: 20%;
+  padding-bottom: 1em;
+}
+.img__profil2 {
+  width: 20%;
+  padding-bottom: 1em;
+}
+.img__tournoi {
+  width: 30%;
+  padding-bottom: 1em;
+  padding-right: 1em;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid #ffffff 0.1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+.nav__links {
+  display: flex;
+}
+.nav__links__element {
+  margin-right: 2em;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  border-top: solid #ffffff 0.1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 2em;
+  padding-right: 4em;
+}
+.footer__links {
+  display: flex;
+}
+.footer__links__element {
+  margin-right: 1em;
+}
+.a__form, .a__participant {
+  text-decoration: none;
+  color: #ffa101;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.a__form:hover, .a__participant:hover {
+  box-shadow: inset 200px 0 0 0 #ffa101;
+  color: white;
+}
+.a__link {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  color: #ffffff;
+  font-size: 2em;
+  transition: all 0.3s ease-in;
+}
+.a__link:hover {
+  color: #ffa101;
+}
+
+.h2__main {
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: bold;
+  margin-left: 1.8em;
+  margin-bottom: 0em;
+}
+.h2__under {
+  color: #ffffff;
+  font-size: 1.8em;
+  font-weight: 100;
+  margin-left: 3.1em;
+  margin-top: 0.1em;
+}
+
+.box__size {
+  width: 16em;
+}
+.box__size__img {
+  width: 100%;
+  height: 100%;
+}
+
+.main__sections {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 4em 5.5em;
+}
+
+.main__sections__game {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 0em 1em 1.5em;
+}
+.main__sections__game__item {
+  background-color: #fae6b1;
+  padding-bottom: 3em;
+}
+
+.title {
+  margin: 0em 0.5em;
+  display: flex;
+  justify-content: space-between;
+}
+.title__game {
+  display: inline-block;
+  color: #ffffff;
+  border-radius: 20px;
+  background-color: #ffa101;
+  font-size: 0.8em;
+  padding: 0.5em 1.5em;
+}
+
+.titleDetails {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8em;
+}
+.titleDetails__game {
+  color: #ffffff;
+  border-radius: 20px;
+  background-color: #ffa101;
+  font-size: 16px;
+  padding: 0.5em 1.5em;
+  width: 9%;
+}
+
+.tournament__title {
+  font-size: 1.2em;
+  padding-left: 0.8em;
+}
+.tournament__table {
+  text-align: left;
+  padding-left: 0.8em;
+  padding-bottom: 3em;
+}
+.tournament__table tr th, .tournament__table tr td {
+  padding-bottom: 1em;
+}
+.tournament__table__details {
+  text-align: left;
+  margin-top: 5em;
+}
+.tournament__table__details thead tr th {
+  font-weight: bold;
+  font-size: 25px;
+}
+.tournament__table__details tr th, .tournament__table__details tr td {
+  padding-bottom: 2em;
+}
+.tournament__list__details {
+  margin-left: 2em;
+}
+.tournament__list__details li {
+  padding-bottom: 1em;
+}
+
+.a__details {
+  color: #ffa101;
+  text-underline-offset: 0.2em;
+  padding-left: 0.8em;
+  padding-bottom: 1em;
+}
+
+.main {
+  display: flex;
+  background-color: #fae6b1;
+  flex-direction: column;
+  border-radius: 12px;
+}
+.main__bloc {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5em;
+}
+.main__bloc__center {
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+.main__section {
+  width: 26%;
+  margin-right: 9em;
+  padding-bottom: 2em;
+}
+.main__section__form {
+  display: flex;
+  flex-direction: column;
+  padding: 4em 0em 0em 7em;
+}
+.main__section__form input[type=submit] {
+  width: 65%;
+  padding: 0.5em;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.main__section__form input[type=submit]:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+.main__section__split {
+  margin-right: 9em;
+  width: 30%;
+}
+.main__section__split__form {
+  display: flex;
+  padding: 3em 0em 0em 3em;
+}
+.main__section__split__form input[type=submit] {
+  width: 65%;
+  padding: 0.5em;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  margin-top: 19.5em;
+  width: 10%;
+  margin-left: 13em;
+}
+.main__section__split__form input[type=submit]:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+.main__section__modifProfil {
+  width: 60%;
+}
+.main__section__modifProfil__form {
+  display: flex;
+  padding: 2em 0em 2em 9em;
+}
+.main__section__modifProfil input[type=submit] {
+  width: 65%;
+  padding: 0.5em;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  width: 10%;
+  margin-top: 17.7em;
+  margin-left: 33.1em;
+}
+.main__section__modifProfil input[type=submit]:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+.main__section__creationTour {
+  width: 50%;
+}
+.main__section__creationTour__form {
+  display: flex;
+  padding: 2em 0em 5em 7em;
+}
+.main__section__creationTour input[type=submit] {
+  width: 65%;
+  padding: 0.5em;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  width: 10%;
+  margin-top: 15em;
+  margin-left: 26.1em;
+}
+.main__section__creationTour input[type=submit]:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+.main__section__editionTour {
+  width: 60%;
+}
+.main__section__editionTour__form {
+  display: flex;
+  padding: 2em 0em 5em 7em;
+}
+.main__section__editionTour input[type=submit] {
+  width: 65%;
+  padding: 0.5em;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  width: 10%;
+  margin-top: 17em;
+  margin-left: 34em;
+}
+.main__section__editionTour input[type=submit]:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+.main__section__one {
+  width: 25%;
+  margin-right: 9em;
+  margin-bottom: 6em;
+}
+.main__section__one__form {
+  display: flex;
+  flex-direction: column;
+  padding: 7em 0em 0em 7em;
+}
+.main__section__one__form input[type=submit] {
+  width: 65%;
+  padding: 0.5em;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.main__section__one__form input[type=submit]:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+.main__section__profil {
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2em;
+  padding-top: 3em;
+}
+.main__section__profil input[type=submit] {
+  width: 150%;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.main__section__profil input[type=submit]:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+
+.main__section__deleteProfil {
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2em;
+  padding-top: 3em;
+  margin-right: 9em;
+}
+.main__section__deleteProfil__form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5em;
+  margin-left: 6.5em;
+}
+.main__section__deleteProfil__form input[type=submit] {
+  width: 65%;
+  padding: 0.5em;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #eb2a38;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  width: 80%;
+  position: relative;
+  right: 0.8em;
+  margin-bottom: 2em;
+}
+.main__section__deleteProfil__form input[type=submit]:hover {
+  color: #eb2a38;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #eb2a38;
+}
+.main__section__deleteTournament {
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2em;
+  padding-top: 3em;
+  margin-right: 9em;
+}
+.main__section__deleteTournament__form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5em;
+}
+.main__section__deleteTournament__form input[type=submit] {
+  width: 65%;
+  padding: 0.5em;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #eb2a38;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  width: 181%;
+  position: relative;
+  right: 2.3em;
+  margin-bottom: 2em;
+}
+.main__section__deleteTournament__form input[type=submit]:hover {
+  color: #eb2a38;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #eb2a38;
+}
+.main__section__editScore {
+  width: 30%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2em;
+  padding-top: 3em;
+  margin-right: 9em;
+}
+.main__section__editScore__form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5em;
+}
+.main__section__editScore__form input[type=submit] {
+  width: 65%;
+  padding: 0.5em;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  margin-bottom: 2em;
+}
+.main__section__editScore__form input[type=submit]:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+
+.main__section__detailsTour {
+  display: table;
+  clear: both;
+  background-color: #fae6b1;
+  border-radius: 12px;
+  box-sizing: border-box;
+  width: 80%;
+  padding-bottom: 3em;
+}
+.main__section__detailsTour__colonne {
+  float: left;
+  width: 33.33%;
+}
+.main__section__detailsTour__colonne h3 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 3.2em;
+}
+
+.form__split {
+  flex: 50%;
+}
+.form__split__right__modifProfil {
+  padding-top: 1.35em;
+}
+.form__split__right__creationTour {
+  padding-top: 0.9em;
+}
+.form__split__right__editionTour {
+  padding-top: 2.2em;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+.reset__password {
+  text-align: right;
+  margin-right: 7.8em;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+}
+
+.p__connexion {
+  margin: 1.5em 0 1.5em 8.7em;
+}
+.p__bold {
+  font-weight: bold;
+}
+
+.fake__button__link {
+  margin-left: 6em;
+  margin-right: 8em;
+  margin-bottom: 2em;
+  text-decoration: none;
+  border: solid;
+  padding: 0.5em;
+  text-align: center;
+  font-size: 1.2em;
+  width: 43.5%;
+  border-width: 2px;
+  border-color: #ffa101;
+  border-radius: 8px;
+  color: #ffa101;
+  transition: all 0.3s ease-in-out;
+}
+.fake__button__link:hover {
+  color: #ffffff;
+  border: none;
+  background-color: #ffa101;
+}
+.fake__button__empty {
+  padding: 0.5em;
+  width: 88%;
+  text-decoration: none;
+  border: solid;
+  text-align: center;
+  font-size: 1.2em;
+  border-width: 2px;
+  border-color: #ffa101;
+  border-radius: 8px;
+  color: #ffa101;
+  transition: all 0.3s ease-in-out;
+}
+.fake__button__empty:hover {
+  color: #ffffff;
+  border: none;
+  background-color: #ffa101;
+}
+.fake__button__empty__details {
+  position: absolute;
+  margin-top: 2em;
+  margin-left: 10em;
+  padding: 0.4em;
+  width: 6.5%;
+  text-decoration: none;
+  border: solid;
+  text-align: center;
+  font-size: 1.2em;
+  border-width: 2px;
+  border-color: #ffa101;
+  border-radius: 8px;
+  color: #ffa101;
+  transition: all 0.3s ease-in-out;
+}
+.fake__button__empty__details:hover {
+  color: #ffffff;
+  border: none;
+  background-color: #ffa101;
+}
+.fake__button__full {
+  width: 25%;
+  margin-top: 0.5em;
+  padding: 0.5em;
+  text-decoration: none;
+  border: solid;
+  text-align: center;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.fake__button__full:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+.fake__button__full__details {
+  width: 6.5%;
+  position: absolute;
+  padding: 0.5em;
+  margin-left: 1em;
+  margin-top: 2em;
+  font-size: 1.2em;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.fake__button__full__details:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+.fake__button__full__create {
+  width: 9%;
+  text-align: center;
+  padding: 0.5em;
+  position: relative;
+  margin-top: -1em;
+  margin-bottom: -1em;
+  margin-left: 70em;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+.fake__button__full__create:hover {
+  color: #ffa101;
+  background-color: #31525b;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+.fake__button__edit {
+  width: 30%;
+  padding: 0.5em;
+  margin-left: 3em;
+  text-decoration: none;
+  border: solid;
+  text-align: center;
+  font-size: 15px;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.fake__button__edit:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+.fake__button__back {
+  width: 32%;
+  margin-left: 1.2em;
+  padding: 0.5em;
+  text-decoration: none;
+  border: solid;
+  text-align: center;
+  font-size: 1.2em;
+  background-color: #fae6b1;
+  color: #ffa101;
+  border-color: #ffa101;
+  border-radius: 8px;
+  border-width: 2px;
+  transition: all 0.3s ease-in-out;
+}
+.fake__button__back:hover {
+  background-color: #ffa101;
+  color: #ffffff;
+  border: none;
+}
+.fake__button__back__tournament {
+  width: 32%;
+  padding: 0.5em;
+  text-decoration: none;
+  border: solid;
+  text-align: center;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #ffa101;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.fake__button__back__tournament:hover {
+  color: #ffa101;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #ffa101;
+}
+.fake__button__delete__profil {
+  width: 25%;
+  padding: 0.5em;
+  margin-top: 1em;
+  font-size: 1.2em;
+  color: #ffffff;
+  background-color: #eb2a38;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.fake__button__delete__profil:hover {
+  color: #eb2a38;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #eb2a38;
+}
+.fake__button__delete {
+  padding: 0.3em;
+  color: #ffffff;
+  background-color: #eb2a38;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+  margin-left: 2.5em;
+}
+.fake__button__delete:hover {
+  color: #eb2a38;
+  background-color: #fae6b1;
+  border: solid;
+  border-width: 2px;
+  border-color: #eb2a38;
+}
+
+.modif__profil__img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#form__connexion__mail, #form__inscription__name, #form__inscription__firstname, #form__inscription__nickname, #form__inscription__mail, #form__inscription__mdp, #form__inscription__repMdp, #form__newPass__mail, #form__contact__mail, #form__contact__intitule, #form__contact__message, #form__suppression__mdp, #form__modification__name, #form__modification__firstname, #form__modification__nickname, #form__modification__mail, #form__modification__mdp, #form__modification__mdpRep, #form__creationTour__name, #form__creationTour__sport, #form__creationTour__nbPlaceDispo, #form__creationTour__dateTour, #form__creationTour__dateTourFin, #form__creationTour__photo, #form__editionTour__name, #form__editionTour__sport, #form__editionTour__nbplaceDispo, #form__editionTour__dateFinTour, #form__editionTour__dateFinIscription, #form__reactiver__mail {
+  margin-bottom: 2.5em;
+}
+
+#form__connexion__mail, #form__connexion__mdp, #form__inscription__name, #form__inscription__firstname, #form__inscription__nickname, #form__inscription__mail, #form__inscription__mdp, #form__inscription__repMdp, #form__newPass__mail, #form__contact__mail, #form__contact__intitule, #form__suppression__mdp, #form__modification__name, #form__modification__firstname, #form__modification__nickname, #form__modification__mail, #form__modification__mdp, #form__modification__mdpRep, #form__creationTour__name, #form__creationTour__sport, #form__creationTour__nbPlaceDispo, #form__creationTour__dateTour, #form__creationTour__dateTourFin, #form__editionTour__name, #form__editionTour__sport, #form__editionTour__nbplaceDispo, #form__editionTour__dateFinTour, #form__editionTour__dateFinIscription, #form__reactiver__mail {
+  border-width: 0px;
+  border-bottom: solid;
+  border-color: #9f9a8c;
+  border-bottom-width: 0.2px;
+  outline: none;
+  display: block;
+  height: 1.5em;
+  width: 65%;
+  font-size: 1.2em;
+  background-color: #fae6b1;
+}
+
+#form__editionScoreJ1, #form__editionScoreJ2 {
+  margin-bottom: 1em;
+}
+
+.options__tournois {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 20%;
+  margin-left: 5.6em;
+  margin-top: 3em;
+}
+
+#form__listeTournois__statut, #form__listeTournois__sport {
+  background-color: #fae6b1;
+}
+
+label[for^=form__listeTournois__statut], label[for^=form__listeTournois__sport] {
+  color: white;
+}
+
+#form__contact__message {
+  border-color: #9f9a8c;
+  border-radius: 12px;
+  outline: none;
+  display: block;
+  height: 8em;
+  width: 65%;
+  font-size: 1.2em;
+  background-color: #fae6b1;
+}
+
+.tour1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.tour__fight {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fae6b1;
+  border-radius: 12px;
+  box-sizing: border-box;
+  width: 80%;
+  padding-bottom: 3em;
+}
+
+.filAriane ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: .5em;
+  margin-left: 1em;
+  padding: 0;
+}
+
+.filAriane li:not(:last-child)::after {
+  display: inline-block;
+  content: "→";
+}
+
+.filAriane a {
+  text-decoration: none;
+  color: white;
+}

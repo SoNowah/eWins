@@ -1,0 +1,766 @@
+@import "Utils/variables";
+@import "Utils/mixins";
+
+body {
+    background-color: $color-background;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+th {
+    font-weight: normal;
+}
+
+.img{
+    &__logo{
+        width: 20%;
+    }
+    &__fond {
+        width: 25%;
+    }
+
+    &__tournament {
+        width: 50%;
+    }
+
+    &__detailsTour {
+        width: 70%;
+    }
+
+    &__profil {
+        width: 20%;
+        padding-bottom: 1em;
+    }
+    
+    &__profil2 {
+        width: 20%;
+        padding-bottom: 1em;
+    }
+    
+    &__tournoi {
+        width: 30%;
+        padding-bottom: 1em;
+        padding-right: 1em;
+    }
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include border_nav;
+
+    &__links {
+        display: flex;
+
+        &__element {
+            margin-right: 2em;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    @include border_footer;
+
+    &__links {
+        display: flex;
+
+        &__element {
+            margin-right: 1em;
+        }
+    }
+}
+
+/*A VOIR POUR CHANGER LES LIENS EN BOUTON*/
+.a {
+    &__form {
+        text-decoration: none;
+        color: $color-buttonFull;
+        transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+        &:hover{
+            box-shadow: inset 200px 0 0 0 $color-buttonFull;
+            color: white;
+        }
+    }
+    &__link {
+        text-decoration: underline;
+        text-underline-offset: .2em;
+        color: $color-white;
+        font-size: $font-size-nav;
+        @include transition_item;
+
+        &:hover {
+            color: $color-buttonFull;
+        }
+    }
+}
+
+.h2 {
+    &__main {
+        color: $color-white;
+        font-size: $font-size-title-main;
+        font-weight: bold;
+        margin-left: 1.8em;
+        margin-bottom: 0em;
+    }
+    &__under {
+        color: $color-white;
+        font-size: $font-size-title-under;
+        font-weight: 100;
+        margin-left: 3.1em;
+        margin-top: .1em;
+    }
+}
+
+.box__size {
+    height: 9em;
+    width: 16em;
+    &__img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.main__sections {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 4em 5.5em;
+    
+
+    &__game {
+        display: flex;
+        flex-direction: column;
+        margin: 1em 0em 1em 1.5em;
+
+        &__item {
+            background-color: $color-background-form;
+            padding-bottom: 3em;
+        }
+    }
+}
+
+.title {
+    margin: 0em .5em;
+    display: flex;
+    justify-content: space-between;
+    &__game {
+        display: inline-block;
+        color: $color-white;
+        border-radius: 20px;
+        background-color: $color-buttonFull;
+        font-size: $font-size-gender-game;
+        padding: .5em 1.5em;
+    }
+}
+
+
+.titleDetails {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8em;
+    
+    &__game {
+        color: $color-white;
+        border-radius: 20px;
+        background-color: $color-buttonFull;
+        font-size: 16px;
+        padding: .5em 1.5em;
+        width: 9%;
+    }
+}
+
+.tournament {
+    &__title {
+        font-size: $font-size-tournament-title;
+        padding-left: $padding-apercu ;
+    }
+
+    &__table {
+        text-align: left;
+        padding-left: $padding-apercu;
+        padding-bottom: 3em;
+        tr {
+            th, td {
+                padding-bottom: 1em;
+            }
+        }
+
+        &__details {
+            text-align: left;
+            margin-top: 5em;
+            thead{
+                tr {
+                    th {
+                        font-weight: bold;
+                        font-size: 25px;
+                    }
+                }
+            }
+            tr {
+                th, td {
+                    padding-bottom: 2em;
+                }
+            }
+        }
+    }
+
+    &__list__details {
+    margin-left: 2em;
+    li {
+        padding-bottom: 1em;
+    }
+    }
+}
+
+.a__details {
+    color: $color-buttonFull;
+    text-underline-offset: .2em;
+    padding-left: $padding-apercu;
+    padding-bottom: 1em;
+}
+
+.main {
+    display: flex; 
+    background-color: $color-background-form;
+    flex-direction: column;
+    border-radius: 12px;
+
+    &__bloc {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 5em;
+        &__center {
+            display: flex;
+            justify-content: center;
+            margin-top: 3em;
+        }
+    }
+
+    &__section {
+        width: 26%;
+        margin-right: 9em;
+        padding-bottom: 2em;
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            padding: 4em 0em 0em 7em;
+
+            input[type=submit] {
+                @include button_full;
+            }
+        }
+
+        &__split {
+            margin-right: 9em;
+            width: 30%;
+
+            &__form {
+                display: flex;
+                padding: 3em 0em 0em 3em;
+
+                input[type=submit] {
+                    @include button_full;
+                    position: absolute;
+                    margin-top: 19.5em;
+                    width: 10%;
+                    margin-left: 13em;
+                }
+            }
+        }
+
+        &__modifProfil {
+            width: 60%;
+
+            &__form {
+                display: flex;
+                padding: 2em 0em 2em 9em;
+            }
+
+            input[type=submit] {
+                @include button_full;
+                position: absolute;
+                width: 10%;
+                margin-top: 17.7em;
+                margin-left: 33.1em;
+            }
+
+        }
+
+        &__creationTour {
+            width: 50%;
+
+            &__form {
+                display: flex;
+                padding: 2em 0em 5em 7em;
+            }
+
+            input[type=submit] {
+                @include button_full;
+                position: absolute;
+                width: 10%;
+                margin-top: 15em;
+                margin-left: 26.1em;
+            }
+        }
+
+        &__editionTour {
+            width: 60%;
+
+            &__form {
+                display: flex;
+                padding: 2em 0em 5em 7em;
+            }
+
+            input[type=submit] {
+                @include button_full;
+                position: absolute;
+                width: 10%;
+                margin-top: 17em;
+                margin-left: 34em;
+            }
+        }
+
+        &__one {
+            width: 25%;
+            margin-right: 9em;
+            margin-bottom: 6em;
+            &__form {
+                display: flex;
+                flex-direction: column;
+                padding: 7em 0em 0em 7em;
+
+                input[type=submit] {
+                    @include button_full;
+                }
+            }
+        }
+
+        &__profil {
+            width: 30%;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 2em;
+            padding-top: 3em;
+        }
+
+        &__deleteProfil {
+            width: 30%;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 2em;
+            padding-top: 3em;
+            margin-right: 9em;
+            &__form {
+                display: flex;
+                flex-direction: column;
+                margin-top: 1.5em;
+                margin-left: 6.5em;
+
+                input[type=submit] {
+                    @include button__delete;
+                    width: 80%;
+                    position: relative;
+                    right: .8em;
+                    margin-bottom: 2em;
+                }
+            }
+        }
+
+        &__deleteTournament {
+            width: 30%;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 2em;
+            padding-top: 3em;
+            margin-right: 9em;
+            &__form {
+                display: flex;
+                flex-direction: column;
+                margin-top: 1.5em;            
+    
+                input[type=submit] {
+                    @include button__delete;
+                    width: 181%;
+                    position: relative;
+                    right: 2.3em;
+                    margin-bottom: 2em;
+                 }
+            }
+        }
+
+        &__editScore {
+            width: 30%;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 2em;
+            padding-top: 3em;
+            margin-right: 9em;
+            &__form {
+                display: flex;
+                flex-direction: column;
+                margin-top: 1.5em;
+                
+
+                input[type=submit] {
+                    @include button_full;
+                    width: 100%;
+                    margin-bottom: 2em;
+                }
+
+            }
+        }
+    }
+}
+
+.main__section__detailsTour {
+    display: table;
+    clear: both;
+    background-color: $color-background-form;
+    border-radius: 12px;
+    box-sizing: border-box;
+    width: 80%;
+    padding-bottom: 3em;
+
+    &__colonne {
+        float: left;
+        width: 33.33%;
+        h3 {
+            font-size: 25px;
+            font-weight: bold;
+            margin-top: 3.2em;
+        }
+    }
+}
+
+.form__split {
+    flex: 50%;
+    &__right {
+        
+        &__modifProfil {
+            padding-top: 1.35em;
+            
+        }
+        &__creationTour {
+            padding-top: .9em;
+        }
+
+        &__editionTour {
+            padding-top: 2.2em;
+        }
+
+    }
+}
+
+label  {
+    font-size: $font-size-form-label;
+}
+
+.reset__password {
+    text-align: right;
+    margin-right: 7.8em;
+    margin-top: .5em;
+    margin-bottom: 2em;
+}
+
+.p {
+    &__connexion{
+        margin: 1.5em 0 1.5em 8.7em;
+    }
+    &__bold {
+        font-weight: bold;
+    }
+}
+
+.fake__button{
+    &__link {
+        margin-left: 6em;
+        margin-right: 8em;
+        margin-bottom: 2em;
+        text-decoration: none;
+        border: solid;
+        padding: .5em;
+        text-align: center;
+        font-size: $font-size-form-label;
+        width: 43.5%;
+        border-width: 2px;
+        border-color: $color-buttonFull;
+        border-radius: 8px;
+        color: $color-buttonFull;
+        transition: all .3s ease-in-out;
+        &:hover{
+            color: $color-white;
+            border: none;
+            background-color: $color-buttonFull;
+        }
+    }
+
+    &__empty {
+        padding: .5em;
+        width: 88%;
+        text-decoration: none;
+        border: solid;
+        text-align: center;
+        font-size: $font-size-form-label;
+        border-width: 2px;
+        border-color: $color-buttonFull;
+        border-radius: 8px;
+        color: $color-buttonFull;
+        transition: all .3s ease-in-out;
+            &:hover{
+                color: $color-white;
+                border: none;
+                background-color: $color-buttonFull;
+            }
+
+    
+        &__details {
+        position: absolute;
+        margin-top: 1.8em;
+        margin-left: 1.5em;
+        padding: .4em;
+        width: 6.5%;
+        text-decoration: none;
+        border: solid;
+        text-align: center;
+        font-size: $font-size-form-label;
+        border-width: 2px;
+        border-color: $color-buttonFull;
+        border-radius: 8px;
+        color: $color-buttonFull;
+        transition: all .3s ease-in-out;
+            &:hover{
+                color: $color-white;
+                border: none;
+                background-color: $color-buttonFull;
+            }
+        }
+    }
+    
+    &__full {
+        width: 25%;
+        margin-top: .5em;
+        padding: .5em;
+        text-decoration: none;
+        border: solid;
+        text-align: center;
+        font-size: $font-size-form-label;
+        color: $color-white;
+        background-color: $color-buttonFull;
+        border: none;
+        border-radius: 8px;
+        transition: all .3s ease-in-out;
+        &:hover{
+            color: $color-buttonFull;
+            background-color: $color-background-form;
+            border: solid;
+            border-width: 2px;
+            border-color: $color-buttonFull;
+        }
+        
+        &__details {
+            width: 30%;
+            padding: .5em;
+            margin-left: 1em;
+            margin-top: 2em;
+            font-size: 18px;
+            color: $color-white;
+            background-color: $color-buttonFull;
+            border: none;
+            border-radius: 8px;
+            transition: all .3s ease-in-out;
+            &:hover{
+                color: $color-buttonFull;
+                background-color: $color-background-form;
+                border: solid;
+                border-width: 2px;
+                border-color: $color-buttonFull;
+            } 
+        }
+    }
+    
+    &__edit {
+        width: 30%;
+        padding: .5em;
+        margin-left: 3em;
+        text-decoration: none;
+        border: solid;
+        text-align: center;
+        font-size: 15px;
+        color: $color-white;
+        background-color: $color-buttonFull;
+        border: none;
+        border-radius: 8px;
+        transition: all .3s ease-in-out;
+        &:hover{
+            color: $color-buttonFull;
+            background-color: $color-background-form;
+            border: solid;
+            border-width: 2px;
+            border-color: $color-buttonFull;
+        }
+    }
+    
+    &__back {
+        width: 32%;
+        margin-left: 1.2em;
+        padding: .5em;
+        text-decoration: none;
+        border: solid;
+        text-align: center;
+        font-size: $font-size-form-label;
+        color: $color-white;
+        background-color: $color-buttonFull;
+        border: none;
+        border-radius: 8px;
+        transition: all .3s ease-in-out;
+        &:hover{
+            color: $color-buttonFull;
+            background-color: $color-background-form;
+            border: solid;
+            border-width: 2px;
+            border-color: $color-buttonFull;
+        }
+        &__tournament {
+            width: 32%;
+            padding: .5em;
+            text-decoration: none;
+            border: solid;
+            text-align: center;
+            font-size: $font-size-form-label;
+            color: $color-white;
+            background-color: $color-buttonFull;
+            border: none;
+            border-radius: 8px;
+            transition: all .3s ease-in-out;
+            &:hover{
+                color: $color-buttonFull;
+                background-color: $color-background-form;
+                border: solid;
+                border-width: 2px;
+                border-color: $color-buttonFull;
+            }
+        }
+    }
+    
+    &__delete__profil {
+        width: 25%;
+        padding: .5em;
+        margin-top: 1em;
+        font-size: $font-size-form-label;
+        color: $color-white;
+        background-color: $color-delete;
+        text-decoration: none;
+        text-align: center;
+        border: none;
+        border-radius: 8px;
+        transition: all .3s ease-in-out;
+        &:hover{
+            color: $color-delete;
+            background-color: $color-background-form;
+            border: solid;
+            border-width: 2px;
+            border-color: $color-delete;
+        }
+    }
+    
+    &__delete {
+        padding: .3em;
+        color: $color-white;
+        background-color: $color-delete;
+        text-decoration: none;
+        text-align: center;
+        border: none;
+        border-radius: 4px;
+        transition: all .3s ease-in-out;
+        margin-left: 2.5em;
+        &:hover{
+            color: $color-delete;
+            background-color: $color-background-form;
+            border: solid;
+            border-width: 2px;
+            border-color: $color-delete;
+        }
+    }
+}
+
+
+
+.modif__profil__img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#form__connexion__mail, #form__inscription__name, #form__inscription__firstname, #form__inscription__nickname, #form__inscription__mail, #form__inscription__mdp, #form__inscription__repMdp, #form__newPass__mail, #form__contact__mail, #form__contact__intitule, #form__contact__message, #form__suppression__mdp, #form__modification__name, #form__modification__firstname, #form__modification__nickname, #form__modification__mail, #form__modification__mdp, #form__modification__mdpRep, #form__creationTour__name, #form__creationTour__sport, #form__creationTour__nbPlaceDispo, #form__creationTour__dateTour, #form__creationTour__dateTourFin, #form__creationTour__photo, #form__editionTour__name, #form__editionTour__sport, #form__editionTour__nbplaceDispo, #form__editionTour__dateFinTour, #form__editionTour__dateFinIscription{
+    margin-bottom: 2.5em;
+}
+
+#form__connexion__mail, #form__connexion__mdp, #form__inscription__name, #form__inscription__firstname, #form__inscription__nickname, #form__inscription__mail, #form__inscription__mdp, #form__inscription__repMdp, #form__newPass__mail, #form__contact__mail, #form__contact__intitule, #form__suppression__mdp, #form__modification__name, #form__modification__firstname, #form__modification__nickname, #form__modification__mail, #form__modification__mdp, #form__modification__mdpRep, #form__creationTour__name, #form__creationTour__sport, #form__creationTour__nbPlaceDispo, #form__creationTour__dateTour, #form__creationTour__dateTourFin, #form__editionTour__name, #form__editionTour__sport, #form__editionTour__nbplaceDispo, #form__editionTour__dateFinTour, #form__editionTour__dateFinIscription{
+    border-width:0px;
+    border-bottom: solid;
+    border-color: $color-details;
+    border-bottom-width: 0.2px;
+    outline: none;
+    display: block;
+    height: 1.5em;
+    width: 65%;
+    font-size: $font-size-form-label;
+    background-color: $color-background-form;
+}
+
+#form__editionScoreJ1, #form__editionScoreJ2 {
+    margin-bottom: 1em;
+}
+
+
+.options__tournois {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 20%;
+    margin-left: 5.6em;
+    margin-top: 3em;
+}
+
+#form__listeTournois__statut, #form__listeTournois__sport {
+    background-color: $color-background-form;
+}
+
+label[for^=form__listeTournois__statut], label[for^=form__listeTournois__sport] {
+    color: white;
+    
+}
+
+#form__contact__message {
+    border-color: $color-details;
+    border-radius: 12px;
+    outline: none;
+    display: block;
+    height: 8em;
+    width: 65%;
+    font-size: $font-size-form-label;
+    background-color: $color-background-form;
+}
+
+.tour1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.tour__fight {
+    display: flex;
+    justify-content: space-around;
+    background-color: $color-background-form;
+    border-radius: 12px;
+    box-sizing: border-box;
+    width: 80%;
+    padding-bottom: 3em;
+}
