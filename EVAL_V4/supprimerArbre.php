@@ -14,7 +14,6 @@ if (isset($_POST['form__button__delete__Tournament'])) {
     $supprimerArbre->supprimerArbre();
     echo $supprimerArbre->get_message();
     header("location: detailsTournoi.php?id_tournoi=$tournament->id_tournoi");
-    exit;
 }
 
 $title = "Supprimer Arbre";

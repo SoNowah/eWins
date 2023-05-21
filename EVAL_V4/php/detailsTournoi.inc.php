@@ -50,6 +50,9 @@ class DetailsTournoi
             $this->tournament->placesDispo = $tournamentRepository->getPlacesDispo($this->tournament->id_tournoi, $this->message);
             $this->tournament->statut = $tournamentRepository->getIdStatut($this->tournament->id_tournoi, $this->message);
             $this->tournament->id_organisateur = $tournamentRepository->getOrganisateur($this->tournament->id_tournoi, $this->message);
+            if ($this->tournament->placesDispo == 0) {
+                $tournamentRepository->updateStatutTournament(2, $this->tournament->id_tournoi, $this->message);
+            }
         } else {
             $this->message = "<h1>Ce tournoi n'existe pas !</h1>";
         }
@@ -87,7 +90,7 @@ class DetailsTournoi
                 $this->rencontreRepository->addRencontre($i, $this->tournament->id_tournoi, $this->message);
                 //Update JoueurUn
                 $idJoueurUn = $participations[$j]->id_utilisateur;
-                $this->rencontreRepository->updatePlayerOne($i, $this->tournament->id_tournoi, $idJoueurUn, $this->message);
+                $this->rencontreRepository->updatePlayerOne($i, $this->tournament->id_tournoi, $idJoueurUn, 0, $this->message);
                 $j++;
             }
             //On supprime les noms de joueurs utilisés.
@@ -98,7 +101,7 @@ class DetailsTournoi
                 $j = 0;
                 //Update JoueurDeux
                 $idJoueurDeux = isset($participations[$j]->id_utilisateur) ? $participations[$j]->id_utilisateur : null;
-                $this->rencontreRepository->updatePlayerTwo($i, $this->tournament->id_tournoi, $idJoueurDeux, $this->message);
+                $this->rencontreRepository->updatePlayerTwo($i, $this->tournament->id_tournoi, $idJoueurDeux, 0, $this->message);
                 $j++;
             }
 

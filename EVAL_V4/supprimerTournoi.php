@@ -12,7 +12,7 @@
 
   $title = "Supprimer Tournoi";
   require 'inc/headerThree.inc.php';
-  ?>  
+  ?>
 
         <main>
             <div class="filAriane">
@@ -28,7 +28,6 @@
                 <img class="img__fond" src="images/fond.png" alt="Rond Jaune"/>
                 <section class="main main__section__deleteTournament">
                     <?php echo $supprimerTournoi->get_message(); ?>
-                    <img class="img__tournament" src="images/fifa.jpg" alt="Image de profil"/>
                     <p class="p__bold"><?php echo $tournament->nom?></p>
                     <?php if ($supprimerTournoi->get_statutTermine()) {?>
                     <form class="main__section__deleteTournament__form" action="<?php echo htmlentities($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
@@ -46,6 +45,6 @@
             </div>
         </main>
 
-<?php 
+<?php
     require 'inc/footer.inc.php';
 ?>

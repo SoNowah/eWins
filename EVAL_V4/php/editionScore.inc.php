@@ -61,6 +61,7 @@ class EditionScore
         if (($id_joueur == $this->rencontre->id_joueurUn) || ($id_joueur == $this->rencontre->id_joueurDeux)) {
             $rencontreRepository = new RencontreRepository();
             $rencontreRepository->updateVainqueur($id_joueur, $this->rencontre->id_rencontre, $this->message);
+            $this->tournamentRepository->updateStatutTournament(5, $this->rencontre->id_tournoi, $this->message);
         } else {
             $this->message = "<h1>Joueur inconnu !</h1>";
         }

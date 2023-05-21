@@ -238,13 +238,14 @@ class RencontreRepository {
         return $result;
     }
 
-    public function updatePlayerOne($id_rencontre, $id_tournoi, $id_joueurUn, &$message) {
+    public function updatePlayerOne($id_rencontre, $id_tournoi, $id_joueurUn, $score_joueurUn, &$message) {
         $result = false;
         $bdd = null;
         try {
             $bdd = DBLink::connect2db(MYDB,$message);
-            $stmt = $bdd->prepare("UPDATE Rencontre SET id_joueurUn = :id_joueurUn WHERE id_rencontre = :id_rencontre AND id_tournoi = :id_tournoi");
+            $stmt = $bdd->prepare("UPDATE Rencontre SET id_joueurUn = :id_joueurUn, score_joueurUn = :score_joueurUn WHERE id_rencontre = :id_rencontre AND id_tournoi = :id_tournoi");
             $stmt->bindValue(':id_joueurUn', $id_joueurUn, PDO::PARAM_INT);
+            $stmt->bindValue(':score_joueurUn', $score_joueurUn, PDO::PARAM_INT);
             $stmt->bindValue(':id_rencontre', $id_rencontre, PDO::PARAM_INT);
             $stmt->bindValue(':id_tournoi', $id_tournoi, PDO::PARAM_INT);
             if($stmt->execute() && $stmt->rowCount() == 1) {
@@ -279,13 +280,14 @@ class RencontreRepository {
         return $result;
     }
 
-    public function updatePlayerTwo($id_rencontre, $id_tournoi, $id_joueurDeux, &$message) {
+    public function updatePlayerTwo($id_rencontre, $id_tournoi, $id_joueurDeux, $score_joueurDeux, &$message) {
         $result = false;
         $bdd = null;
         try {
             $bdd = DBLink::connect2db(MYDB,$message);
-            $stmt = $bdd->prepare("UPDATE Rencontre SET id_joueurDeux = :id_joueurDeux WHERE id_rencontre = :id_rencontre AND id_tournoi = :id_tournoi");
+            $stmt = $bdd->prepare("UPDATE Rencontre SET id_joueurDeux = :id_joueurDeux, score_joueurDeux = :score_joueurDeux WHERE id_rencontre = :id_rencontre AND id_tournoi = :id_tournoi");
             $stmt->bindValue(':id_joueurDeux', $id_joueurDeux, PDO::PARAM_INT);
+            $stmt->bindValue(':score_joueurDeux', $score_joueurDeux, PDO::PARAM_INT);
             $stmt->bindValue(':id_rencontre', $id_rencontre, PDO::PARAM_INT);
             $stmt->bindValue(':id_tournoi', $id_tournoi, PDO::PARAM_INT);
             if($stmt->execute() && $stmt->rowCount() == 1) {

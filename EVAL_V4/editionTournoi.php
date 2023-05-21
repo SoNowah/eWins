@@ -17,7 +17,7 @@
                     <li><a href="index.php">Accueil</a></li>
                     <li><a href="listeTournois.php">Liste tournois</a></li>
                     <li><a href="detailsTournoi.php?id_tournoi=<?php echo $tournament->id_tournoi?>">Détails tournoi</a></li>
-                    <li><a href="editionTournoi.php">Modifier tournoi</a> </li>
+                    <li><a href="editionTournoi.php?id_tournoi=<?php echo $tournament->id_tournoi?>">Modifier tournoi</a> </li>
                 </ul>
             </div>
             <h1 class="h2 h2__main">Modification du tournoi</h1>

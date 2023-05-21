@@ -51,9 +51,9 @@ class CreerTournoi
                                 if ($tournament->placesDispo < 2) {
                                     $this->message = "<h1>Le nombre de places ne peut pas être inférieur à 2 !</h1>";
                                 } elseif ($tournament->dateTournoi < $tournament->dateFinInscription) {
-                                    $this->message = "<h1>La date du tournoi ne peut pas être inférieur à la date de fin des inscriptions !</h1>";
+                                    $this->message = "<h1>La date du tournoi ne peut pas être antérieure à la date de fin des inscriptions !</h1>";
                                 } elseif ($tournament->dateFinInscription < date("Y-m-d")) {
-                                    $this->message = "<h1>La date de fin des inscriptions ne peut pas être inférieur à la date du jour!</h1>";
+                                    $this->message = "<h1>La date de fin des inscriptions ne peut pas être antérieure à la date du jour!</h1>";
                                 } else {
                                     $result = $tournamentRepository->createTournament($tournament->nom, $tournament->id_sport, $tournament->placesDispo, 1, $tournament->dateTournoi, $tournament->dateFinInscription, 1, $tournament->id_organisateur, $this->message);
                                     if ($result) {

@@ -21,7 +21,7 @@
     }
 
     $title = "Edition du score";
-    include('inc/headerTwo.inc.php');
+    require 'inc/headerThree.inc.php';
   ?>  
 
         <main>
@@ -37,7 +37,6 @@
             <div class="main__bloc">
                 <img class="img__fond" src="images/fond.png" alt="Rond Jaune"/>
                 <section class="main main__section__editScore">
-                    <img class="img__tournament" src="images/fifa.jpg" alt="Image du tournoi"/>
                     <p class="p__bold"><?php echo $pseudoJ1 ?> VS <?php echo $pseudoJ2?></p>
                     <?php echo $editionScore->get_message(); ?>
                     <form class="main__section__editScore__form" action="<?php echo htmlentities($_SERVER["PHP_SELF"]); ?>" method="POST">

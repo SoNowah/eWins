@@ -22,6 +22,7 @@
 
     if (isset($_POST['genererRencontre'])) {
         $detailsTournoi->genererRencontres();
+        header("location: detailsTournoi.php?id_tournoi=$tournament->id_tournoi");
     }
 
     if (isset($_POST['cloturerTournoi'])) {
@@ -143,8 +144,8 @@
                                 <p><?php echo $pseudoJoueurUn . " (" . $scoreJoueurUn .")"  ?> vs <?php echo $pseudoJoueurDeux . " (" . $scoreJoueurDeux .")" ?></p>
                             <?php }
                         } else {
-                            if ($tournament->statut == 1 || $tournament->statut == 2) {?>
-                                <p>Vous ne pouvez pas générer l'arbre d'un tournoi non clôturé/généré/terminé<br>
+                            if ($tournament->statut == 1) {?>
+                                <p>Vous ne pouvez pas générer l'arbre d'un tournoi non clôturé<br>
                                     Voulez vous clôturer ce tournoi ?</p>
                                 <input type="submit" name="cloturerTournoi" value="Clôturer"/>
                                 <input type="hidden" name="id_tournoi" value="<?php if ($tournament->id_tournoi != null) {
@@ -163,10 +164,12 @@
                             <?php } else {
                                 foreach ($rencontres[0] as $rencontre) {
                                     $pseudoJoueurUn = $detailsTournoi->get_userRepository()->getPseudoId($rencontre->id_joueurUn, $message);
+                                    $scoreJoueurUn = $detailsTournoi->get_rencontreRepository()->getScorePlayerOne($rencontre->id_rencontre, $tournament->id_tournoi, $message);
                                     $pseudoJoueurDeux = $detailsTournoi->get_userRepository()->getPseudoId($rencontre->id_joueurDeux, $message);
+                                    $scoreJoueurDeux = $detailsTournoi->get_rencontreRepository()->getScorePlayerTwo($rencontre->id_rencontre, $tournament->id_tournoi, $message);
                                     ?>
                                     <a class="fake__button__edit" href="supprimerArbre.php?id_tournoi=<?php echo $tournament->id_tournoi?>">Supprimer arbre</a>
-                                    <p><?php echo $pseudoJoueurUn ?> vs <?php echo $pseudoJoueurDeux ?></p>
+                                    <p><?php echo $pseudoJoueurUn . " (" . $scoreJoueurUn .")" ?> vs <?php echo $pseudoJoueurDeux . " (" . $scoreJoueurDeux .")" ?></p>
                                     <a class="fake__button__edit" href="editionScore.php?id_tournoi=<?php echo $tournament->id_tournoi?>&id_rencontre=<?php echo $rencontre->id_rencontre?>">Editer</a>
                                 <?php }
                             }

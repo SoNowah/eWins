@@ -4,7 +4,7 @@
   $nouveauMDP = new NouveauMDP();
   $nouveauMDP->recuperationMDP();
   $title = "Nouveau mot de passe";
-  require 'inc/headerThree.inc.php';
+  require 'inc/headerTwo.inc.php';
   ?>  
   
         <main>

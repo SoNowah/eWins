@@ -132,7 +132,11 @@
                 }
                     ?>
             </div>
+            <?php if ($_SESSION['id_utilisateur'] == $tournament->id_organisateur) { ?>
             <a class="fake__button__full__create" href="creaTournois.php">Créer</a>
+                <?php
+            }
+            ?>
             <h1 class="h2 h2__main">Tous les tournois</h1>
             <div class="main__sections">
                 <?php
